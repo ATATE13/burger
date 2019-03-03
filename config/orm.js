@@ -1,10 +1,6 @@
 var connection = require('../config/connection.js');
 
 var orm = {
-    selectAll: fun
-}
-
-var orm = {
 
     selectAll: function (cb) {
         var queryString = "SELECT * FROM burgers";
@@ -39,3 +35,5 @@ var orm = {
 };
 
 module.exports = orm;
+
+
