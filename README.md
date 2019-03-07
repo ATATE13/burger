@@ -1,5 +1,5 @@
-# burger
-Node and Express Servers application. 
+# burger_Eat-the-burger
+Node Express Handlebars application. 
 
 ## Table of contents
 
@@ -12,80 +12,64 @@ Node and Express Servers application.
 * [How to use app](#how-to-use)
 
 ## <a name="about-this-project"></a> About this project
-This project is, I created a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM. I used a MVC design pattern; use Node and MySQL to query and route data in your app, and Handlebars to generate your HTML.
+This project I created a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM. I used a MVC design pattern; use Node and MySQL to query and route data in your app, and Handlebars to generate your HTML.
 
 
 ## <a name="project-requirements"></a> Project requirements
 
-<li>1. Your survey should have 10 questions of your choosing. Each answer should be on a scale of 1 to 5 based on how much the user agrees or disagrees with a question.</li>
+<li>1. Eat-the-Burger is a restaurant app that lets users input the names of burgers they would like to eat. </li>
 
-<li>2. Your `server.js` file should require the basic npm packages we've used in class: `express` and `path`.</li>
+<li>2. Whenever the user submits a burger's name, your app will display the burger on the left side of the page, waiting to be devoured.</li>
 
-<li>3. Your `htmlRoutes.js` file should include two routes:
+<li>3. Each burger in the waiting area also has a 'Devour it!' button. When the user clicks it the burger will move to the right side of the page.</li>
 
-   * A GET Route to `/survey` which should display the survey page.
-   * A default, catch-all route that leads to `home.html` which displays the home page.</li>
+<li>4. Your app will store every burger in a database, whether devoured or not.
 
-<li>4. Your `apiRoutes.js` file should contain two routes:
-
-   * A GET route with the url `/api/friends`. This will be used to display a JSON of all possible friends.
-   * A POST routes `/api/friends`. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.</li>
-
-<li>5. You should save your application's data inside of `app/data/friends.js` as an array of objects.</li>
-
-
-<li>6. Determine the user's most compatible friend using the following as a guide:
-
-   * Convert each user's results into a simple array of numbers (ex: `[5, 1, 4, 4, 5, 1, 2, 5, 4, 1]`).
-   * With that done, compare the difference between current user's scores against those from other users, question by question.
-    Add up the differences to calculate the `totalDifference`.
-   * Remember to use the absolute value of the differences. Put another way: no negative solutions! Your app should calculate both `5-3` and `3-5` as `2`, and so on.
-   * The closest match will be the user with the least amount of difference.</li>
-
-<li>7. Once you've found the current user's most compatible friend, display the result as a modal pop-up.
-   * The modal should display both the name and picture of the closest match.</li>
-
-
+   
 ## <a name="structure-of-the-project"></a> Structure of the project
 <li>README.md</li>
 <li>gitignore</li>
-<li>app</li>
-    <li>* data</li>
-        <li>* friends.js</li>
-    <li>* public</li>
-        <li>* home.html</li>
-        <li>* survey.html</li>
-    <li>* routing</li>
-        <li>* apiRoutes.js</li>
-        <li>* htmlRoutes.js</li>
-    <li>node_modules</li>  
-    <li>package.json</li>
-    <li>server.js</li>
+<li>config</li>
+    <li>* connection.js</li>
+    <li>* orm.js</li>
+<li>* controllers</li>
+    <li>* burgers_controller.js</li>
+<li>* db</li>
+    <li>* schema.sql</li>
+    <li>* seeds.js</li>
+<li>models</li>  
+    <li>* burger.js</li>
+<li>node_modules</li>
+<li>package.json</li>
+<li>public</li>
+    <li>assets</li>
+        <li>css</li>
+            <li>burger_style.css</li>
+        <li>img</li>
+            <li>burger.png</li>
+<li>server.js</li>
+<li>views</li>
+    <li>index.handlebars</li>
+    <li>layouts</li>
+        <li>main.handlebars</li>
+    
 
 ## <a name="screenshots"></a> Screenshots
-Images of Friend Finder-app
-![Friend Finder-app Initiated](Screen_Shot_1.png)
-![Survery Page ](Screen_Shot_2.png)
-![Submit Suvery](Screen_Shot_3.png)
+Images of Eat-the-Burger app
+![Eat-the-Burger](./public/assets/img/Readme_screenshot.jpg )
 
-## <a name="Video"></a> Video
-![FriendFinder GIF](FriendFinder.gif)
 
 ## <a name="technologies-used"></a> Technologies used to create the app
-<li>Heroku</li>
-<li>Node.js</li>
-<li>Command-line</li>
-<li>Javascript</li>
-<li>package-json</li>
-<li>node_modules</li>
+<li>node.js - https://nodejs.org/en/</li>
+<li>heroku-cli NPM Package - https://www.npmjs.com/package/heroku-cli</li>
+<li>body-parser NPM Package - https://www.npmjs.com/package/body-parser</li>
+<li>express NPM Package - https://www.npmjs.com/package/express</li>
+<li>path NPM Package - https://www.npmjs.com/package/path</li>
 
 
 ## <a name="how-to-use"></a> How to use app
-<li>Navigate to the href="https://hidden-hamlet-93045.herokuapp.com".</li>
-<li>Select "Go to Suvery" to start Friend Finder.</li>
-<li>Input your name.</li>
-<li>Input a URL to your picture</li>
-<li>Review the questions and select option 1 to 5, 1 being strongly disagree and 5 being strongly agree</li>
-<li>Once you complete the Suvery, select the "Submit" buttom to find your Friend Match.</li>
-<li>A picture of your compatible friend will appear.</li>
+<li>Navigate to the href="https://hidden-cove-50002.herokuapp.com".</li>
+<li>Select "Eat me" to devour the burger.</li>
+<li>The user can also 'Add Burger' to add another to the list.</li>
+
 
