@@ -1,7 +1,8 @@
 body {
     font-family: 'Germania One', cursive;
     width: 100%;
-    background-color: lightblue;
+    opacity: 1;
+    background-image: url("../img/burger_image.jpg");
 }
 
 h1 {
@@ -9,18 +10,24 @@ h1 {
     margin-left: 20%;
     margin-bottom: 3%;
     margin-top: 2%;
+    background-position: center;
+    color: red;
+
 }
 
 #avail {
     float: left;
     margin-right: 6%;
     margin-left: 10%;
+    background-color:lightgreen;
+    
 
 
 }
 
 #devoured {
     float: left;
+    background-color: lightgreen;
 
 }
 
@@ -33,4 +40,5 @@ li {
 #add {
     clear: both;
     margin-left: 25%;
+
 }
